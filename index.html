@@ -45,7 +45,9 @@
             background-color: #F8FBFE;
             color: #13233B;
             font-family: 'Plus Jakarta Sans', sans-serif;
-            overflow-x: hidden;
+            overflow-x: clip;
+            width: 100%;
+            position: relative;
             -webkit-font-smoothing: antialiased;
         }
 
@@ -299,23 +301,24 @@
     </section>
 
 <!-- ================= 3. TRATAMIENTO ESTRELLA: CORONAS DE ZIRCONIO ================= -->
-    <section class="py-16 sm:py-24 bg-fs-surface border-b border-fs-border" id="zirconio">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
+    <section class="py-12 sm:py-20 bg-fs-surface border-b border-fs-border w-full overflow-hidden" id="zirconio">
+        <div class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
             
-            <div class="bg-gradient-to-br from-fs-blue to-fs-blue-dark text-white rounded-3xl p-6 sm:p-10 lg:p-14 shadow-2xl relative overflow-hidden" data-aos="fade-up">
+            <div class="w-full bg-gradient-to-br from-fs-blue to-fs-blue-dark text-white rounded-2xl sm:rounded-3xl p-6 sm:p-10 lg:p-14 shadow-2xl relative overflow-hidden">
                 
-                <!-- Forma decorativa suave -->
-                <div class="absolute -right-20 -bottom-20 w-96 h-96 bg-fs-cyan/20 rounded-full blur-3xl pointer-events-none"></div>
+                <!-- Forma decorativa contenida sin desborde -->
+                <div class="absolute -right-16 -bottom-16 w-72 h-72 sm:w-96 sm:h-96 bg-fs-cyan/20 rounded-full blur-3xl pointer-events-none"></div>
 
-                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center relative z-10">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center relative z-10 w-full">
                     
+                    <!-- Columna de Información -->
                     <div class="lg:col-span-7 space-y-5 sm:space-y-6">
-                        <!-- Badge con margen superior corregido -->
-                        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-fs-cyan/20 border border-fs-cyan/40 text-fs-cyan text-[11px] font-brand font-bold uppercase tracking-wider">
+                        
+                        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-fs-cyan/20 border border-fs-cyan/40 text-fs-cyan text-[10px] sm:text-xs font-brand font-bold uppercase tracking-wider">
                             <span>Rehabilitación Oral de Alta Gama</span>
                         </div>
 
-                        <h2 class="font-brand text-2xl sm:text-4xl lg:text-5xl font-extrabold leading-tight">
+                        <h2 class="font-brand text-2xl sm:text-4xl lg:text-5xl font-extrabold leading-tight text-white">
                             ¿Quieres una sonrisa más blanca, natural y resistente?
                         </h2>
 
@@ -323,12 +326,13 @@
                             Las <strong>coronas de zirconio</strong> son la mejor opción para renovar tu dentadura con estética, resistencia y brillo superior sin metal visible. Corrige desgastes, manchas severas o piezas fracturadas.
                         </p>
 
-                        <!-- Bloque de Precio Adaptativo para Móvil -->
+                        <!-- Precio -->
                         <div class="flex flex-col sm:flex-row sm:items-baseline gap-1 sm:gap-4 pt-1">
                             <span class="text-[11px] sm:text-xs uppercase tracking-widest text-slate-300 font-brand">Transforma tu sonrisa desde:</span>
                             <span class="font-brand text-3xl sm:text-5xl font-extrabold text-fs-cyan">S/ 400</span>
                         </div>
 
+                        <!-- Lista de Beneficios -->
                         <ul class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 pt-1 text-xs text-slate-200 font-medium">
                             <li class="flex items-center gap-2.5"><i class="fa-solid fa-circle-check text-fs-cyan"></i> Libre de metal y biocompatible</li>
                             <li class="flex items-center gap-2.5"><i class="fa-solid fa-circle-check text-fs-cyan"></i> Translucidez idéntica al diente natural</li>
@@ -336,28 +340,29 @@
                             <li class="flex items-center gap-2.5"><i class="fa-solid fa-circle-check text-fs-cyan"></i> Elaborado en laboratorio propio</li>
                         </ul>
 
-                        <div class="pt-3">
+                        <!-- Botón CTA -->
+                        <div class="pt-2">
                             <a href="https://wa.me/51902678354?text=Hola%20FortaSmile,%20deseo%20informaci%C3%B3n%20sobre%20la%20promoci%C3%B3n%20de%20Coronas%20de%20Zirconio%20a%20S/400" 
                                target="_blank" 
-                               class="btn-cyan w-full sm:w-auto px-8 py-3.5 sm:py-4 rounded-xl text-xs uppercase tracking-wider inline-flex items-center justify-center gap-2.5 text-center">
+                               class="btn-cyan w-full sm:w-auto px-7 py-3.5 rounded-xl text-xs uppercase tracking-wider inline-flex items-center justify-center gap-2.5 font-bold shadow-lg">
                                 <i class="fa-brands fa-whatsapp text-base"></i>
                                 <span>Aprovechar Promoción Zirconio</span>
                             </a>
                         </div>
                     </div>
 
-                    <!-- Tarjeta de Antes y Después de Zirconio -->
-                    <div class="lg:col-span-5">
-                        <div class="bg-fs-surface text-fs-dark p-5 sm:p-6 rounded-2xl shadow-xl space-y-4">
+                    <!-- Tarjeta Comparativa Antes / Después -->
+                    <div class="lg:col-span-5 w-full">
+                        <div class="bg-fs-surface text-fs-dark p-4 sm:p-6 rounded-2xl shadow-xl space-y-4 w-full">
                             <div class="flex items-center justify-between border-b border-fs-border pb-3">
                                 <span class="font-brand text-xs font-bold uppercase tracking-wider text-fs-blue">Caso Real Clínico</span>
-                                <span class="text-[10px] sm:text-[11px] bg-fs-cyan-light text-fs-cyan font-brand font-bold px-2.5 py-0.5 rounded-full">Surquillo</span>
+                                <span class="text-[10px] bg-fs-cyan-light text-fs-cyan font-brand font-bold px-2 py-0.5 rounded-full">Surquillo</span>
                             </div>
 
                             <div class="space-y-3">
                                 <div class="space-y-1">
                                     <span class="text-[10px] font-brand font-bold text-slate-400 uppercase tracking-wider">Antes (Desgaste &amp; Coloración)</span>
-                                    <div class="aspect-[16/9] rounded-lg overflow-hidden bg-slate-100 relative">
+                                    <div class="aspect-[16/9] rounded-lg overflow-hidden bg-slate-100 relative w-full">
                                         <img src="img/zirconio-antes.jpg" alt="Antes Corona Zirconio" class="w-full h-full object-cover hidden" onload="this.classList.remove('hidden'); this.nextElementSibling?.classList.add('hidden');"/>
                                         <div class="img-editorial"><span>Imagen</span></div>
                                     </div>
@@ -365,7 +370,7 @@
 
                                 <div class="space-y-1">
                                     <span class="text-[10px] font-brand font-bold text-fs-cyan uppercase tracking-wider">Resultado (Zirconio Terminado)</span>
-                                    <div class="aspect-[16/9] rounded-lg overflow-hidden bg-slate-100 relative border-2 border-fs-cyan/40">
+                                    <div class="aspect-[16/9] rounded-lg overflow-hidden bg-slate-100 relative border-2 border-fs-cyan/40 w-full">
                                         <img src="img/zirconio-despues.jpg" alt="Resultado Corona Zirconio" class="w-full h-full object-cover hidden" onload="this.classList.remove('hidden'); this.nextElementSibling?.classList.add('hidden');"/>
                                         <div class="img-editorial"><span>Imagen</span></div>
                                     </div>

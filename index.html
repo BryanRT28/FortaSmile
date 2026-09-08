@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+    <title>FortaSmile | Centro Odontológico Especializado · Surquillo, Lima</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
+    
+    <!-- Tipografías Clínicas y Humanas: Plus Jakarta Sans + Outfit -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        "fs-blue": "#004FBA",         /* Azul Clínico Forta */
+                        "fs-blue-dark": "#0A2D6C",    /* Azul Marino Header/Footer */
+                        "fs-cyan": "#00BFD8",         /* Turquesa Smile */
+                        "fs-cyan-light": "#E0F9FD",   /* Fondo Suave Cyan */
+                        "fs-mint": "#2AD0A9",         /* Verde Clínico Acento */
+                        "fs-bg": "#F8FBFE",           /* Lienzo Limpio Médico */
+                        "fs-surface": "#FFFFFF",      /* Superficie Tarjetas */
+                        "fs-border": "#E5EEF7",       /* Línea Reticular Suave */
+                        "fs-dark": "#13233B",         /* Texto Principal */
+                        "fs-muted": "#627792"         /* Texto Secundario */
+                    },
+                    fontFamily: {
+                        "brand": ["'Outfit'", "sans-serif"],
+                        "sans": ["'Plus Jakarta Sans'", "sans-serif"]
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        html, body {
+            background-color: #F8FBFE;
+            color: #13233B;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .img-editorial {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #EAF4FD;
+            border: 2px dashed #B8D5F2;
+            color: #004FBA;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            font-weight: 700;
+            width: 100%;
+            height: 100%;
+            transition: all 0.3s ease;
+        }
+        .img-editorial:hover {
+            background: #D9ECFC;
+            border-color: #00BFD8;
+            color: #00BFD8;
+        }
+
+        .btn-cyan {
+            background: linear-gradient(135deg, #00BFD8 0%, #009BB8 100%);
+            color: #FFFFFF;
+            font-family: 'Outfit', sans-serif;
+            font-weight: 700;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            box-shadow: 0 4px 14px rgba(0, 191, 216, 0.3);
+        }
+        .btn-cyan:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 191, 216, 0.45);
+        }
+
+        .btn-blue {
+            background: linear-gradient(135deg, #004FBA 0%, #0A3A85 100%);
+            color: #FFFFFF;
+            font-family: 'Outfit', sans-serif;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 14px rgba(0, 79, 186, 0.25);
+        }
+        .btn-blue:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 79, 186, 0.4);
+        }
+    </style>
+</head>
+<body class="selection:bg-fs-cyan selection:text-white">
+
+    <!-- ================= 1. BARRA SUPERIOR & NAVEGACIÓN ================= -->
+    <div class="bg-fs-blue-dark text-slate-200 text-[11px] py-2 px-6 lg:px-12 border-b border-white/10 hidden sm:block">
+        <div class="max-w-7xl mx-auto flex items-center justify-between">
+            <div class="flex items-center gap-6">
+                <span class="flex items-center gap-1.5"><i class="fa-solid fa-location-dot text-fs-cyan"></i> Sede: Av. Manuel Villarán 1197, Surquillo · Lima</span>
+                <span class="flex items-center gap-1.5"><i class="fa-solid fa-calendar-check text-fs-cyan"></i> Atención Odontológica Previa Cita</span>
+            </div>
+            <div class="flex items-center gap-5">
+                <span class="flex items-center gap-1.5 text-white font-semibold"><i class="fa-brands fa-whatsapp text-emerald-400 text-sm"></i> 902 678 354</span>
+                <span class="text-slate-600">|</span>
+                <span class="text-fs-cyan font-medium"><i class="fa-solid fa-microscope"></i> Laboratorio Dental &amp; Rx Propio</span>
+            </div>
+        </div>
+    </div>
+
+    <header class="sticky top-0 inset-x-0 z-50 bg-fs-surface/95 backdrop-blur-md border-b border-fs-border">
+        <div class="max-w-7xl mx-auto flex items-center justify-between px-6 lg:px-12 h-20">
+            
+            <!-- Logo FortaSmile -->
+            <a href="#inicio" class="flex items-center gap-3 py-2">
+                <div class="h-12 sm:h-14 w-auto flex items-center">
+                    <img src="img/logo.jpg" 
+                         alt="Logo FortaSmile Centro Odontológico" 
+                         class="h-full w-auto object-contain hidden" 
+                         onload="this.classList.remove('hidden'); this.nextElementSibling?.classList.add('hidden');" />
+                    <div class="w-36 h-11 border border-dashed border-fs-cyan flex items-center justify-center text-fs-blue font-brand font-extrabold text-xs uppercase tracking-wider rounded">
+                        Tu Logo
+                    </div>
+                </div>
+            </a>
+
+            <!-- Navegación Desktop -->
+            <nav class="hidden lg:flex items-center gap-8 font-brand text-xs uppercase tracking-wider font-semibold text-fs-dark">
+                <a href="#especialidades" class="hover:text-fs-blue transition-colors">Especialidades</a>
+                <a href="#zirconio" class="text-fs-cyan hover:text-fs-blue transition-colors font-bold">Coronas de Zirconio</a>
+                <a href="#razones" class="hover:text-fs-blue transition-colors">Por Qué Elegirnos</a>
+                <a href="#testimonios" class="hover:text-fs-blue transition-colors">Casos Clínicos</a>
+                <a href="#ubicacion" class="hover:text-fs-blue transition-colors">Sede Surquillo</a>
+            </nav>
+
+            <!-- Acceso Directo de Cita -->
+            <div class="flex items-center gap-4">
+                <a href="https://wa.me/51902678354?text=Hola%20FortaSmile,%20deseo%20agendar%20una%20cita%20de%20evaluaci%C3%B3n" 
+                   target="_blank" 
+                   class="hidden sm:inline-flex btn-cyan px-6 py-3 rounded-lg text-xs uppercase tracking-wider items-center gap-2">
+                    <i class="fa-brands fa-whatsapp text-sm"></i>
+                    <span>Agendar Cita</span>
+                </a>
+
+                <button id="mobile-toggle" class="lg:hidden w-10 h-10 flex items-center justify-center border border-fs-border rounded text-fs-blue" aria-label="Abrir Menú">
+                    <i class="fa-solid fa-bars text-lg"></i>
+                </button>
+            </div>
+
+        </div>
+
+        <!-- Menú Móvil -->
+        <div id="mobile-popup" class="hidden lg:hidden bg-fs-surface border-b border-fs-border px-6 py-5 space-y-3 font-brand text-xs uppercase font-semibold text-fs-dark">
+            <a href="#especialidades" class="block py-1 hover:text-fs-blue">Especialidades Odontológicas</a>
+            <a href="#zirconio" class="block py-1 text-fs-cyan font-bold">Coronas de Zirconio (Desde S/ 400)</a>
+            <a href="#razones" class="block py-1 hover:text-fs-blue">4 Razones para Elegirnos</a>
+            <a href="#testimonios" class="block py-1 hover:text-fs-blue">Resultados Antes y Después</a>
+            <a href="#ubicacion" class="block py-1 hover:text-fs-blue">Ubicación y Horarios</a>
+            <a href="https://wa.me/51902678354" target="_blank" class="block text-center py-3 bg-fs-blue text-white rounded font-bold mt-2">WhatsApp: 902 678 354</a>
+        </div>
+    </header>
+
+<!-- ================= 2. HERO LUMINOSO CLÍNICO (PNG TRANSPARENTE) ================= -->
+    <section class="relative pt-10 sm:pt-14 pb-16 sm:pb-24 bg-gradient-to-b from-[#EBF5FB] via-[#F6FAFD] to-white border-b border-fs-border overflow-hidden" id="inicio">
+        
+        <!-- Destellos sutiles de fondo que iluminan el corte de los doctores -->
+        <div class="absolute top-12 right-12 w-[520px] h-[520px] bg-fs-cyan/15 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute top-32 right-1/3 w-[380px] h-[380px] bg-fs-blue/10 rounded-full blur-2xl pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+                
+                <!-- Columna Izquierda: Mensaje de Confianza Médica -->
+                <div class="lg:col-span-6 space-y-6" data-aos="fade-right">
+                    
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-fs-blue/10 border border-fs-blue/20 text-fs-blue font-brand text-xs font-bold uppercase tracking-wider">
+                        <span class="w-2 h-2 rounded-full bg-fs-cyan animate-pulse"></span>
+                        <span>Centro Odontológico &bull; Surquillo, Lima</span>
+                    </div>
+
+                    <h1 class="font-brand text-4xl sm:text-5xl lg:text-[54px] font-extrabold leading-[1.08] text-fs-dark tracking-tight">
+                        Una sonrisa fuerte, sana <br/>
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-fs-blue to-fs-cyan">
+                            y libre de dolor.
+                        </span>
+                    </h1>
+
+                    <p class="text-base text-fs-muted font-normal leading-relaxed max-w-lg">
+                        Atención personalizada con materiales certificados y diagnóstico preciso. Especialistas en estética dental, coronas de zirconio, ortodoncia, implantes y endodoncia en nuestra sede de Surquillo.
+                    </p>
+
+                    <!-- Botones de Acción -->
+                    <div class="flex flex-wrap items-center gap-4 pt-1">
+                        <a href="https://wa.me/51902678354?text=Hola%20FortaSmile,%20deseo%20agendar%20una%20cita%20de%20evaluaci%C3%B3n" 
+                           target="_blank" 
+                           class="btn-blue px-7 py-3.5 rounded-xl text-xs uppercase tracking-wider flex items-center gap-2.5 font-bold shadow-lg">
+                            <i class="fa-brands fa-whatsapp text-base text-emerald-300"></i>
+                            <span>Agendar al 902 678 354</span>
+                        </a>
+                        <a href="#zirconio" class="px-6 py-3.5 border border-fs-border hover:border-fs-cyan text-fs-dark hover:text-fs-blue text-xs uppercase font-brand font-bold tracking-wider rounded-xl transition-all bg-white shadow-sm">
+                            Zirconio desde S/ 400
+                        </a>
+                    </div>
+
+                    <!-- 3 Sellos de Respaldo -->
+                    <div class="grid grid-cols-3 gap-3 pt-6 border-t border-fs-border font-brand">
+                        <div class="space-y-1">
+                            <i class="fa-solid fa-tooth text-fs-blue text-base"></i>
+                            <p class="text-xs font-bold text-fs-dark uppercase">Laboratorio</p>
+                            <span class="text-[11px] text-fs-muted block font-sans">Propio &amp; Rayos X</span>
+                        </div>
+                        <div class="space-y-1">
+                            <i class="fa-solid fa-user-doctor text-fs-blue text-base"></i>
+                            <p class="text-xs font-bold text-fs-dark uppercase">Especialistas</p>
+                            <span class="text-[11px] text-fs-muted block font-sans">Trato cálido y cercano</span>
+                        </div>
+                        <div class="space-y-1">
+                            <i class="fa-solid fa-credit-card text-fs-blue text-base"></i>
+                            <p class="text-xs font-bold text-fs-dark uppercase">Facilidades</p>
+                            <span class="text-[11px] text-fs-muted block font-sans">Cuotas sin intereses</span>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Columna Derecha: Doctores con Fondo Esférico Integrado -->
+                <div class="lg:col-span-6 flex justify-center lg:justify-end relative" data-aos="fade-left">
+                    <div class="relative w-full max-w-lg flex items-center justify-center">
+                        
+                        <!-- Círculo de Luz Posterior que enmarca el PNG -->
+                        <div class="absolute w-72 h-72 sm:w-96 sm:h-96 rounded-full bg-gradient-to-tr from-fs-blue/20 via-fs-cyan/30 to-fs-cyan/10 blur-xl"></div>
+                        
+                        <!-- Imagen PNG sin fondo (guárdala como doctores-fortasmile.png) -->
+                        <img src="img/hero.png" 
+                             alt="Staff Odontológico FortaSmile" 
+                             class="w-full h-auto object-contain relative z-10 drop-shadow-[0_15px_30px_rgba(0,79,186,0.18)] scale-105 select-none pointer-events-none" />
+
+                        <!-- Badge Flotante Superior: Citas Activas -->
+                        <div class="absolute top-2 left-0 sm:left-4 z-20 bg-white/95 backdrop-blur-md border border-fs-border px-3.5 py-2 rounded-xl shadow-lg flex items-center gap-2.5">
+                            <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-ping"></span>
+                            <span class="font-brand text-[11px] font-bold text-fs-dark">Atención Previa Cita</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- ================= BARRA HORIZONTAL CONCIERGE ================= -->
+            <div class="mt-10 sm:mt-14 bg-white rounded-2xl p-4 sm:p-5 shadow-xl border border-fs-border text-fs-dark" data-aos="fade-up">
+                <form onsubmit="event.preventDefault(); submitDentalAppointment();" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-3 sm:gap-4 items-center">
+                    
+                    <div class="lg:col-span-4 px-2">
+                        <label class="block text-[10px] font-brand uppercase tracking-wider font-bold text-fs-muted mb-1" for="patientTreatment">
+                            1. Tratamiento Dental
+                        </label>
+                        <select id="patientTreatment" class="w-full bg-[#F4F8FC] border-0 rounded-lg text-xs font-semibold text-fs-dark py-2.5 px-3 focus:ring-2 focus:ring-fs-cyan outline-none">
+                            <option value="Consulta y Evaluación General">Consulta y Evaluación General</option>
+                            <option value="Coronas de Zirconio (Desde S/ 400)">Coronas de Zirconio (Desde S/ 400)</option>
+                            <option value="Ortodoncia (Brackets)">Ortodoncia (Brackets)</option>
+                            <option value="Endodoncia (Salvar Pieza)">Endodoncia (Salvar Pieza)</option>
+                            <option value="Limpieza Dental / Profilaxis">Limpieza Dental / Profilaxis</option>
+                            <option value="Carillas Dentales / Estética">Carillas Dentales / Estética</option>
+                            <option value="Implantes Dentales">Implantes Dentales</option>
+                            <option value="Odontopediatría (Niños)">Odontopediatría (Niños)</option>
+                        </select>
+                    </div>
+
+                    <div class="lg:col-span-3 px-2">
+                        <label class="block text-[10px] font-brand uppercase tracking-wider font-bold text-fs-muted mb-1" for="patientName">
+                            2. Nombre del Paciente
+                        </label>
+                        <input type="text" id="patientName" required placeholder="Tu nombre y apellido" class="w-full bg-[#F4F8FC] border-0 rounded-lg text-xs text-fs-dark py-2.5 px-3 focus:ring-2 focus:ring-fs-cyan outline-none placeholder:text-slate-400"/>
+                    </div>
+
+                    <div class="lg:col-span-3 px-2">
+                        <label class="block text-[10px] font-brand uppercase tracking-wider font-bold text-fs-muted mb-1" for="patientPhone">
+                            3. WhatsApp de Contacto
+                        </label>
+                        <input type="tel" id="patientPhone" required placeholder="Ej. 902 678 354" class="w-full bg-[#F4F8FC] border-0 rounded-lg text-xs text-fs-dark py-2.5 px-3 focus:ring-2 focus:ring-fs-cyan outline-none placeholder:text-slate-400"/>
+                    </div>
+
+                    <div class="lg:col-span-2 pt-2 sm:pt-0">
+                        <button type="submit" class="btn-cyan w-full py-3.5 rounded-xl text-xs uppercase tracking-wider flex items-center justify-center gap-2 font-bold shadow-md">
+                            <i class="fa-brands fa-whatsapp text-sm"></i>
+                            <span>Pedir Cita</span>
+                        </button>
+                    </div>
+
+                </form>
+            </div>
+
+        </div>
+    </section>
+
+<!-- ================= 3. TRATAMIENTO ESTRELLA: CORONAS DE ZIRCONIO ================= -->
+    <section class="py-16 sm:py-24 bg-fs-surface border-b border-fs-border" id="zirconio">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
+            
+            <div class="bg-gradient-to-br from-fs-blue to-fs-blue-dark text-white rounded-3xl p-6 sm:p-10 lg:p-14 shadow-2xl relative overflow-hidden" data-aos="fade-up">
+                
+                <!-- Forma decorativa suave -->
+                <div class="absolute -right-20 -bottom-20 w-96 h-96 bg-fs-cyan/20 rounded-full blur-3xl pointer-events-none"></div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center relative z-10">
+                    
+                    <div class="lg:col-span-7 space-y-5 sm:space-y-6">
+                        <!-- Badge con margen superior corregido -->
+                        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-fs-cyan/20 border border-fs-cyan/40 text-fs-cyan text-[11px] font-brand font-bold uppercase tracking-wider">
+                            <span>Rehabilitación Oral de Alta Gama</span>
+                        </div>
+
+                        <h2 class="font-brand text-2xl sm:text-4xl lg:text-5xl font-extrabold leading-tight">
+                            ¿Quieres una sonrisa más blanca, natural y resistente?
+                        </h2>
+
+                        <p class="text-xs sm:text-sm text-slate-200 leading-relaxed font-light">
+                            Las <strong>coronas de zirconio</strong> son la mejor opción para renovar tu dentadura con estética, resistencia y brillo superior sin metal visible. Corrige desgastes, manchas severas o piezas fracturadas.
+                        </p>
+
+                        <!-- Bloque de Precio Adaptativo para Móvil -->
+                        <div class="flex flex-col sm:flex-row sm:items-baseline gap-1 sm:gap-4 pt-1">
+                            <span class="text-[11px] sm:text-xs uppercase tracking-widest text-slate-300 font-brand">Transforma tu sonrisa desde:</span>
+                            <span class="font-brand text-3xl sm:text-5xl font-extrabold text-fs-cyan">S/ 400</span>
+                        </div>
+
+                        <ul class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 pt-1 text-xs text-slate-200 font-medium">
+                            <li class="flex items-center gap-2.5"><i class="fa-solid fa-circle-check text-fs-cyan"></i> Libre de metal y biocompatible</li>
+                            <li class="flex items-center gap-2.5"><i class="fa-solid fa-circle-check text-fs-cyan"></i> Translucidez idéntica al diente natural</li>
+                            <li class="flex items-center gap-2.5"><i class="fa-solid fa-circle-check text-fs-cyan"></i> Máxima dureza frente a la masticación</li>
+                            <li class="flex items-center gap-2.5"><i class="fa-solid fa-circle-check text-fs-cyan"></i> Elaborado en laboratorio propio</li>
+                        </ul>
+
+                        <div class="pt-3">
+                            <a href="https://wa.me/51902678354?text=Hola%20FortaSmile,%20deseo%20informaci%C3%B3n%20sobre%20la%20promoci%C3%B3n%20de%20Coronas%20de%20Zirconio%20a%20S/400" 
+                               target="_blank" 
+                               class="btn-cyan w-full sm:w-auto px-8 py-3.5 sm:py-4 rounded-xl text-xs uppercase tracking-wider inline-flex items-center justify-center gap-2.5 text-center">
+                                <i class="fa-brands fa-whatsapp text-base"></i>
+                                <span>Aprovechar Promoción Zirconio</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Tarjeta de Antes y Después de Zirconio -->
+                    <div class="lg:col-span-5">
+                        <div class="bg-fs-surface text-fs-dark p-5 sm:p-6 rounded-2xl shadow-xl space-y-4">
+                            <div class="flex items-center justify-between border-b border-fs-border pb-3">
+                                <span class="font-brand text-xs font-bold uppercase tracking-wider text-fs-blue">Caso Real Clínico</span>
+                                <span class="text-[10px] sm:text-[11px] bg-fs-cyan-light text-fs-cyan font-brand font-bold px-2.5 py-0.5 rounded-full">Surquillo</span>
+                            </div>
+
+                            <div class="space-y-3">
+                                <div class="space-y-1">
+                                    <span class="text-[10px] font-brand font-bold text-slate-400 uppercase tracking-wider">Antes (Desgaste &amp; Coloración)</span>
+                                    <div class="aspect-[16/9] rounded-lg overflow-hidden bg-slate-100 relative">
+                                        <img src="img/zirconio-antes.jpg" alt="Antes Corona Zirconio" class="w-full h-full object-cover hidden" onload="this.classList.remove('hidden'); this.nextElementSibling?.classList.add('hidden');"/>
+                                        <div class="img-editorial"><span>Imagen</span></div>
+                                    </div>
+                                </div>
+
+                                <div class="space-y-1">
+                                    <span class="text-[10px] font-brand font-bold text-fs-cyan uppercase tracking-wider">Resultado (Zirconio Terminado)</span>
+                                    <div class="aspect-[16/9] rounded-lg overflow-hidden bg-slate-100 relative border-2 border-fs-cyan/40">
+                                        <img src="img/zirconio-despues.jpg" alt="Resultado Corona Zirconio" class="w-full h-full object-cover hidden" onload="this.classList.remove('hidden'); this.nextElementSibling?.classList.add('hidden');"/>
+                                        <div class="img-editorial"><span>Imagen</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+<!-- ================= 4. ESPECIALIDADES ODONTOLÓGICAS ================= -->
+    <section class="py-24 bg-fs-bg" id="especialidades">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            
+            <div class="text-center max-w-2xl mx-auto mb-16 space-y-3" data-aos="fade-up">
+                <span class="font-brand text-xs uppercase tracking-widest text-fs-cyan font-bold block">Tratamientos Integrales</span>
+                <h2 class="font-brand text-3xl sm:text-4xl font-extrabold text-fs-dark">Nuestras Especialidades</h2>
+                <p class="text-sm text-fs-muted leading-relaxed">
+                    Atención médica odontológica para niños, jóvenes y adultos con tecnología de diagnóstico certero.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                
+                <!-- 1. Ortodoncia -->
+                <div class="bg-fs-surface border border-fs-border rounded-2xl overflow-hidden hover:border-fs-cyan transition-all shadow-sm flex flex-col" data-aos="fade-up">
+                    <div class="aspect-[16/10] bg-slate-100 relative overflow-hidden">
+                        <img src="img/ortodoncia.jpg" alt="Ortodoncia Brackets FortaSmile" class="w-full h-full object-cover hidden" onload="this.classList.remove('hidden'); this.nextElementSibling?.classList.add('hidden');"/>
+                        <div class="img-editorial"><span>Imagen</span></div>
+                    </div>
+                    <div class="p-6 space-y-3 flex-1 flex flex-col justify-between">
+                        <div class="space-y-2">
+                            <div class="w-10 h-10 rounded-xl bg-fs-cyan-light text-fs-cyan flex items-center justify-center text-lg">
+                                <i class="fa-solid fa-teeth-open"></i>
+                            </div>
+                            <h3 class="font-brand text-lg font-bold text-fs-dark">Ortodoncia (Brackets)</h3>
+                            <p class="text-xs text-fs-muted leading-relaxed">
+                                Alinea tus dientes y mejora tu mordida. Brackets metálicos y estéticos con controles mensuales planificados para resultados armónicos.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. Endodoncia -->
+                <div class="bg-fs-surface border border-fs-border rounded-2xl overflow-hidden hover:border-fs-cyan transition-all shadow-sm flex flex-col" data-aos="fade-up" data-aos-delay="100">
+                    <div class="aspect-[16/10] bg-slate-100 relative overflow-hidden">
+                        <img src="img/endodoncia.jpg" alt="Endodoncia FortaSmile" class="w-full h-full object-cover hidden" onload="this.classList.remove('hidden'); this.nextElementSibling?.classList.add('hidden');"/>
+                        <div class="img-editorial"><span>Imagen</span></div>
+                    </div>
+                    <div class="p-6 space-y-3 flex-1 flex flex-col justify-between">
+                        <div class="space-y-2">
+                            <div class="w-10 h-10 rounded-xl bg-fs-cyan-light text-fs-cyan flex items-center justify-center text-lg">
+                                <i class="fa-solid fa-tooth"></i>
+                            </div>
+                            <h3 class="font-brand text-lg font-bold text-fs-dark">Endodoncia</h3>
+                            <p class="text-xs text-fs-muted leading-relaxed">
+                                Salvamos tus piezas dentales naturales eliminando la infección del nervio y aliviando el dolor sin necesidad de extracción prematura.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3. Implantes Dentales -->
+                <div class="bg-fs-surface border border-fs-border rounded-2xl overflow-hidden hover:border-fs-cyan transition-all shadow-sm flex flex-col" data-aos="fade-up" data-aos-delay="200">
+                    <div class="aspect-[16/10] bg-slate-100 relative overflow-hidden">
+                        <img src="img/implantes.jpg" alt="Implantes Dentales FortaSmile" class="w-full h-full object-cover hidden" onload="this.classList.remove('hidden'); this.nextElementSibling?.classList.add('hidden');"/>
+                        <div class="img-editorial"><span>Imagen</span></div>
+                    </div>
+                    <div class="p-6 space-y-3 flex-1 flex flex-col justify-between">
+                        <div class="space-y-2">
+                            <div class="w-10 h-10 rounded-xl bg-fs-cyan-light text-fs-cyan flex items-center justify-center text-lg">
+                                <i class="fa-solid fa-screwdriver"></i>
+                            </div>
+                            <h3 class="font-brand text-lg font-bold text-fs-dark">Implantes Dentales</h3>
+                            <p class="text-xs text-fs-muted leading-relaxed">
+                                Recupera piezas perdidas con fijaciones de titanio biocompatible de alta estabilidad que devuelven la función masticatoria completa.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4. Estética & Carillas -->
+                <div class="bg-fs-surface border border-fs-border rounded-2xl overflow-hidden hover:border-fs-cyan transition-all shadow-sm flex flex-col" data-aos="fade-up">
+                    <div class="aspect-[16/10] bg-slate-100 relative overflow-hidden">
+                        <img src="img/carillas.jpg" alt="Carillas y Blanqueamiento FortaSmile" class="w-full h-full object-cover hidden" onload="this.classList.remove('hidden'); this.nextElementSibling?.classList.add('hidden');"/>
+                        <div class="img-editorial"><span>Imagen</span></div>
+                    </div>
+                    <div class="p-6 space-y-3 flex-1 flex flex-col justify-between">
+                        <div class="space-y-2">
+                            <div class="w-10 h-10 rounded-xl bg-fs-cyan-light text-fs-cyan flex items-center justify-center text-lg">
+                                <i class="fa-solid fa-wand-magic-sparkles"></i>
+                            </div>
+                            <h3 class="font-brand text-lg font-bold text-fs-dark">Carillas &amp; Blanqueamiento</h3>
+                            <p class="text-xs text-fs-muted leading-relaxed">
+                                Diseño de sonrisa personalizado, carillas estéticas y aclaramiento dental clínico seguro para un tono uniforme y luminoso.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 5. Odontopediatría -->
+                <div class="bg-fs-surface border border-fs-border rounded-2xl overflow-hidden hover:border-fs-cyan transition-all shadow-sm flex flex-col" data-aos="fade-up" data-aos-delay="100">
+                    <div class="aspect-[16/10] bg-slate-100 relative overflow-hidden">
+                        <img src="img/odontopediatria.jpg" alt="Odontopediatria FortaSmile" class="w-full h-full object-cover hidden" onload="this.classList.remove('hidden'); this.nextElementSibling?.classList.add('hidden');"/>
+                        <div class="img-editorial"><span>Imagen</span></div>
+                    </div>
+                    <div class="p-6 space-y-3 flex-1 flex flex-col justify-between">
+                        <div class="space-y-2">
+                            <div class="w-10 h-10 rounded-xl bg-fs-cyan-light text-fs-cyan flex items-center justify-center text-lg">
+                                <i class="fa-solid fa-child-reaching"></i>
+                            </div>
+                            <h3 class="font-brand text-lg font-bold text-fs-dark">Odontopediatría</h3>
+                            <p class="text-xs text-fs-muted leading-relaxed">
+                                Cuidado especializado para niños con trato paciente y empático, desmitificando el dolor y previniendo caries en dientes de leche y definitivos.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 6. Prótesis & Limpiezas -->
+                <div class="bg-fs-surface border border-fs-border rounded-2xl overflow-hidden hover:border-fs-cyan transition-all shadow-sm flex flex-col" data-aos="fade-up" data-aos-delay="200">
+                    <div class="aspect-[16/10] bg-slate-100 relative overflow-hidden">
+                        <img src="img/limpieza.jpg" alt="Limpiezas y Protesis FortaSmile" class="w-full h-full object-cover hidden" onload="this.classList.remove('hidden'); this.nextElementSibling?.classList.add('hidden');"/>
+                        <div class="img-editorial"><span>Imagen</span></div>
+                    </div>
+                    <div class="p-6 space-y-3 flex-1 flex flex-col justify-between">
+                        <div class="space-y-2">
+                            <div class="w-10 h-10 rounded-xl bg-fs-cyan-light text-fs-cyan flex items-center justify-center text-lg">
+                                <i class="fa-solid fa-shield-virus"></i>
+                            </div>
+                            <h3 class="font-brand text-lg font-bold text-fs-dark">Limpiezas &amp; Prótesis</h3>
+                            <p class="text-xs text-fs-muted leading-relaxed">
+                                Profilaxis por ultrasonido para eliminar sarro bacteriano, y confección de prótesis fijas o removibles adaptadas al milímetro.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ================= 5. LAS 4 RAZONES PARA ELEGIR FORTASMILE ================= -->
+    <section class="py-24 bg-fs-surface border-t border-b border-fs-border" id="razones">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <div class="lg:col-span-5 space-y-5" data-aos="fade-right">
+                    <span class="font-brand text-xs uppercase tracking-widest text-fs-cyan font-bold block">Nuestro Diferencial</span>
+                    <h2 class="font-brand text-3xl sm:text-4xl font-extrabold text-fs-dark leading-tight">
+                        Lo que hay detrás de un tratamiento bien hecho
+                    </h2>
+                    <p class="text-sm text-fs-muted leading-relaxed font-normal">
+                        No se trata solo de aliviar una molestia momentánea, sino de cuidar cada detalle clínico para lograr resultados estéticos, seguros y verdaderamente duraderos.
+                    </p>
+
+                    <div class="p-5 bg-fs-cyan-light/40 border-l-4 border-fs-cyan rounded-r-xl space-y-1">
+                        <h4 class="font-brand text-sm font-bold text-fs-blue">Atención con Diagnóstico Certero</h4>
+                        <p class="text-xs text-fs-muted leading-relaxed">
+                            Evaluamos tu cavidad bucal con radiografías y cámaras intraorales para explicarte con total transparencia el estado real de tus dientes.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-5" data-aos="fade-left">
+                    
+                    <div class="bg-fs-bg p-6 rounded-2xl border border-fs-border space-y-2">
+                        <div class="w-8 h-8 rounded-lg bg-fs-blue text-white font-brand text-xs font-bold flex items-center justify-center">1</div>
+                        <h4 class="font-brand text-base font-bold text-fs-dark">Materiales de Alta Calidad</h4>
+                        <p class="text-xs text-fs-muted leading-relaxed">Empleamos insumos certificados internacionalmente y resinas que aseguran adherencia y durabilidad prolongada.</p>
+                    </div>
+
+                    <div class="bg-fs-bg p-6 rounded-2xl border border-fs-border space-y-2">
+                        <div class="w-8 h-8 rounded-lg bg-fs-blue text-white font-brand text-xs font-bold flex items-center justify-center">2</div>
+                        <h4 class="font-brand text-base font-bold text-fs-dark">Profesionales Comprometidos</h4>
+                        <p class="text-xs text-fs-muted leading-relaxed">Un equipo odontológico colegiado enfocado en tu bienestar, con atención cálida y sin apresuramientos.</p>
+                    </div>
+
+                    <div class="bg-fs-bg p-6 rounded-2xl border border-fs-border space-y-2">
+                        <div class="w-8 h-8 rounded-lg bg-fs-blue text-white font-brand text-xs font-bold flex items-center justify-center">3</div>
+                        <h4 class="font-brand text-base font-bold text-fs-dark">Facilidades de Pago</h4>
+                        <p class="text-xs text-fs-muted leading-relaxed">Tratamientos al alcance de tu presupuesto: cuotas sin intereses, descuentos familiares y opciones flexibles.</p>
+                    </div>
+
+                    <div class="bg-fs-bg p-6 rounded-2xl border border-fs-border space-y-2">
+                        <div class="w-8 h-8 rounded-lg bg-fs-blue text-white font-brand text-xs font-bold flex items-center justify-center">4</div>
+                        <h4 class="font-brand text-base font-bold text-fs-dark">Laboratorio Dental Propio</h4>
+                        <p class="text-xs text-fs-muted leading-relaxed">Confeccionamos tus coronas, carillas y férulas con mayor rapidez, precisión en la prueba de color y garantía directa.</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ================= 6. SEDE & UBICACIÓN SURQUILLO ================= -->
+    <section class="py-20 bg-fs-blue-dark text-white" id="ubicacion">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+                
+                <div class="lg:col-span-7 space-y-4">
+                    <span class="font-brand text-xs uppercase tracking-widest text-fs-cyan font-bold block">Visítanos en Surquillo</span>
+                    <h2 class="font-brand text-3xl sm:text-4xl font-extrabold">Tu Clínica Dental Cercana</h2>
+                    <p class="text-sm text-slate-300 font-light leading-relaxed max-w-xl">
+                        Ubicados estratégicamente en Surquillo con fácil acceso desde Miraflores, San Borja y San Isidro. Contamos con ambientes esterilizados y equipamiento moderno.
+                    </p>
+
+                    <div class="space-y-3 pt-2 text-xs">
+                        <div class="flex items-center gap-3 text-slate-200">
+                            <i class="fa-solid fa-location-dot text-fs-cyan text-base"></i>
+                            <span>Av. Manuel Villarán 1197, Surquillo, Lima 15038 (Ref. Altura Av. Angamos Este)</span>
+                        </div>
+                        <div class="flex items-center gap-3 text-slate-200">
+                            <i class="fa-brands fa-whatsapp text-emerald-400 text-base"></i>
+                            <span>Citas y Consultas: <strong>902 678 354</strong></span>
+                        </div>
+                        <div class="flex items-center gap-3 text-slate-200">
+                            <i class="fa-regular fa-clock text-fs-cyan text-base"></i>
+                            <span>Horario de Atención: Lunes a Sábado con previa cita</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-5 bg-fs-surface text-fs-dark p-7 sm:p-8 rounded-2xl shadow-2xl space-y-4 text-center">
+                    <div class="w-12 h-12 mx-auto rounded-full bg-fs-cyan-light text-fs-cyan flex items-center justify-center text-xl">
+                        <i class="fa-solid fa-calendar-check"></i>
+                    </div>
+                    <h4 class="font-brand text-lg font-bold text-fs-blue">¿Primera vez en FortaSmile?</h4>
+                    <p class="text-xs text-fs-muted leading-relaxed">
+                        Escríbenos por WhatsApp y consulta por nuestras promociones del mes y facilidades en cuotas.
+                    </p>
+                    <a href="https://wa.me/51902678354?text=Hola%20FortaSmile,%20deseo%20agendar%20una%20primera%20cita%20de%20evaluaci%C3%B3n" 
+                       target="_blank" 
+                       class="btn-cyan w-full py-4 rounded-xl text-xs uppercase tracking-wider block">
+                        Escribir al 902 678 354
+                    </a>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ================= 7. FOOTER ================= -->
+    <footer class="py-12 bg-fs-blue-dark/95 text-slate-400 text-xs border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12 flex flex-col md:flex-row items-center justify-between gap-6">
+            
+            <div class="flex items-center gap-3">
+                <div class="h-10 w-auto flex items-center">
+                    <img src="img/logo.jpg" alt="Logo FortaSmile Footer" class="h-full w-auto object-contain hidden" onload="this.classList.remove('hidden'); this.nextElementSibling?.classList.add('hidden');"/>
+                    <div class="w-28 h-8 border border-dashed border-fs-cyan/50 flex items-center justify-center text-fs-cyan text-[10px] font-brand font-bold uppercase">
+                        Tu Logo
+                    </div>
+                </div>
+                <span class="text-slate-500 font-sans">| Centro Odontológico Especializado</span>
+            </div>
+
+            <div class="flex items-center gap-6 text-base text-slate-300">
+                <a href="https://www.facebook.com/profile.php?id=61566563783776" target="_blank" class="hover:text-fs-cyan transition-colors" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="https://instagram.com/fortasmile" target="_blank" class="hover:text-fs-cyan transition-colors" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://tiktok.com/@fortasmile" target="_blank" class="hover:text-fs-cyan transition-colors" title="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+                <a href="https://wa.me/51902678354" target="_blank" class="hover:text-fs-cyan transition-colors" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+            </div>
+
+            <span class="text-slate-500 font-sans text-[11px]">
+                &copy; 2026 FortaSmile. Surquillo, Lima, Perú.
+            </span>
+
+        </div>
+    </footer>
+
+    <!-- Botón Flotante de WhatsApp (Solo Icono Circular en Móvil / Expandido en Desktop) -->
+    <div class="fixed bottom-5 right-5 z-50">
+        <a href="https://wa.me/51902678354?text=Hola%20FortaSmile,%20deseo%20agendar%20una%20cita" 
+           target="_blank" 
+           aria-label="Contactar por WhatsApp"
+           class="flex items-center justify-center w-14 h-14 sm:w-auto sm:h-auto sm:py-3 sm:px-5 rounded-full bg-emerald-500 hover:bg-emerald-600 text-white shadow-2xl hover:scale-105 transition-all font-brand text-xs font-bold gap-2">
+            <i class="fa-brands fa-whatsapp text-2xl sm:text-base"></i>
+            <span class="hidden sm:inline">Citas 902 678 354</span>
+        </a>
+    </div>
+
+    <!-- Scripts de Interacción -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            AOS.init({ duration: 750, once: true, easing: 'ease-out-cubic' });
+
+            const toggle = document.getElementById('mobile-toggle');
+            const popup = document.getElementById('mobile-popup');
+            if (toggle && popup) {
+                toggle.addEventListener('click', () => popup.classList.toggle('hidden'));
+                popup.querySelectorAll('a').forEach(a => a.addEventListener('click', () => popup.classList.add('hidden')));
+            }
+        });
+
+        function submitDentalAppointment() {
+            const treatment = document.getElementById('patientTreatment').value;
+            const name = document.getElementById('patientName').value.trim();
+            const phone = document.getElementById('patientPhone').value.trim();
+
+            const text = `¡Hola FortaSmile! Deseo agendar una consulta dental:%0A%0A` +
+                         `*Tratamiento:* ${encodeURIComponent(treatment)}%0A` +
+                         `*Paciente:* ${encodeURIComponent(name)}%0A` +
+                         `*Teléfono:* ${encodeURIComponent(phone)}%0A%0A` +
+                         `¿Podrían indicarme los horarios disponibles en su sede de Surquillo? Gracias.`;
+
+            window.open(`https://wa.me/51902678354?text=${text}`, '_blank');
+        }
+    </script>
+</body>
+</html>
